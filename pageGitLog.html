@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style css -- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Style css -- My style -->
+    <link rel="stylesheet" href="style.css">
+    <title>Aides commandes de Git</title>
+</head>
+<body>
+    <div class="myMenu navbar navbar-expand-lg navbar-dark bg-dark">
+        <h1 class="navbar-brand display1 titleH1"><span class="bigPoint">.</span>Git</h1>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+            <li class="nav-item"><a href="pageCommandes.html" class="nav-link">Commandes</a></li>
+            <li class="nav-item"><a href="pageAccess.html" class="nav-link">accès sécurisé</a></li>
+            <li class="nav-item"><a href="pageGitLog.html" class="nav-link">Git Log</a></li>
+        </ul>
+    </div>
+  
+    <div class="container">
+        <table class="
+        table
+        table-xl
+        table-primary
+        table-striped
+        table-bordered
+        table-hover">
+            <thead>
+                <tr class="bg-dark text-light">
+                    <th class="bg-dark">#</th>
+                    <th scope="col">Commandes</th>
+                    <th scope="col">Actions</th>
+                </tr>    
+            </thead>
+            <tbody>
+                <h3 class="gitl">Utilisation du log</h3>
+                <thead>
+                    <tr class="bg-secondary text-light text-center">
+                        <th colspan="4">GIT LOG</th>
+                    </tr>    
+                </thead>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git log</td>
+                    <td>Affiche le log et son SHA-1</td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git log -p</td>
+                    <td>la commande git log dispose de l'option -p.
+                        Cette option permet de cumuler l'utilisation de la commande git log et de la commande git diff, appliquées à chaque commit obtenu.</td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git log --stat</td>
+                    <td>L'utilisation de git log --stat permet de visualiser de manière concise les modifications réalisées dans chaque commit.</td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git log -p -4</td>
+                    <td>En cumulant l'option -p et -{n} à la commande git log, l'historique des modifications apportées par les deux derniers commits est affiché.</td>
+                </tr>
+                <tr>
+                    <thead>
+                        <tr class="bg-secondary text-light text-center">
+                            <th colspan="3">DEFINIR DES ALIAS</th>
+                        </tr>    
+                    </thead>
+                    <th scope="row">.</th>
+                    <td>git config --global alias.logmodif 'log -p'
+                        git logmodif
+                    </td>
+                    <td>
+                        La commande git config --global alias.logmodif 'git log -p' crée un alias global dans la configuration de Git nommé logmodif et renvoyant à la commande git log -p.
+                        
+                        L'utilisation de git logmodif affiche bien les détails des modifications effectuées au sein de chaque commit</td>
+                    </tr>
+                    <tr class="bg-secondary text-light text-center">
+                        <th colspan="3">AMELIORER LA LISIBILTE DE L'HISTORIQUE</th>
+                    </tr>  
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git log --pretty=oneline</td>
+                        <td>Le résultat obtenu affiche chaque commit de l'historique sur une seule ligne. Chaque ligne contient alors l'identifiant unique du commit, la branche sur laquelle il se trouve, et son commentaire.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git log --pretty=short</td>
+                        <td>Affiche sur plusieurs lignes, pour chaque commit, son identifiant unique avec la branche concernée, le nom de l'auteur du commit et le commentaire associé.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git log --pretty=fuller</td>
+                        <td>afficher des informations supplémentaires à celles déjà présentes avec l'option short.
+                        </td>
+                    </tr>  
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git log --oneline</td>
+                        <td>La commande git log --oneline affiche les résultats comme avec l'utilisation de git log --pretty=oneline, en tronquant l'identifiant des commits.
+                            <br> Il existe un raccourci à l'option <b>--pretty=oneline.</b> En effet, git log accepte directement l'option --oneline.
+                            Celle-ci cumule l'option --pretty=oneline et l'option <b>--abbrev-commit</b>, ce qui permet de n'afficher que les premiers caractères de l'identifiant unique du commit.</td>
+                    </tr>
+                    <tr class="bg-secondary text-light text-center">
+                        <th colspan="3">FORMATER L'AFFICHAGE DE L'HISTORIQUE</th>
+                    </tr>  
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git log --pretty=format:"%h - %an, %ad : %s"</td>
+                        <td>Les masques utilisés dans la commande git log --pretty=format:"%h - %an, %ad : %s" affichent un résumé de l'identifiant du commit suivi du nom de l'auteur, de la date au format date définie dans la configuration de Git, puis du commentaire du commit.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git log --pretty=format:"%h : %s"
+                        </td>
+                        <td>Le formatage utilisé avec git log --pretty=format:"%h : %s" affiche une version courte des identifiants des commits et les commentaires associés.</td>
+                    </tr>
+                    <tr class="bg-secondary text-light text-center">
+                        <th colspan="3">REPRESENTATER GRAPHIQUEMENT L'HISTORIQUE DES MODIFICATIONS</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>
+                            git log --graph --pretty=format:"%h : %s"</td>
+                        <td>La commande git log --graph --pretty=format:"%h : %s" affiche l'arborescence des branches et, pour chacun des commits, son identifiant au format court et le commentaire qui lui est associé.</td>
+                    </tr>
+                    <tr class="bg-secondary text-light text-center">
+                        <th colspan="3">RECHERCHER DANS L'HISTORIQUE</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git log --since=yesterday  --pretty=format:"%h : %s"</td>
+                        <td>La commande git log --since=yesterday --pretty=format:"%h : %s" affiche tous les commits depuis la veille, et les formate pour n'afficher que leur identifiant au format court et leur commentaire.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td> git log --since=2.days  --pretty=format:"%h : %s"
+                        </td>
+                        <td>La commande git log --since=2.days --pretty=format:"%h : %s" affiche les commits dans le même format que précédemment, mais affiche tous les commits jusqu'à deux jours en arrière.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git log -SHello -p
+                        </td>
+                        <td>La commande git log -SHello -p affiche les commits dont les modification contiennent la chaîne de caractères Hello et affiche les informations par défaut des commits, puis montre le détail des modifications qu'ils contiennent.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git log --author </td>
+                        <td>....</td>
+                    </tr>
+                </thead>
+            </tbody>
+        </table>  
+    </div>
+    
+
+    <!-- SCRIPT Jquery -- Bootstrap 4.6-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>

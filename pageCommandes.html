@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style css -- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Style css -- My style -->
+    <link rel="stylesheet" href="style.css">
+    <title>Aides commandes de Git</title>
+</head>
+<body>
+    <div class="myMenu navbar navbar-expand-lg navbar-dark bg-dark">
+        <h1 class="navbar-brand display1 titleH1"><span class="bigPoint">.</span>Git</h1>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+            <li class="nav-item"><a href="pageCommandes.html" class="nav-link">Commandes</a></li>
+            <li class="nav-item"><a href="pageAccess.html" class="nav-link">accès sécurisé</a></li>
+            <li class="nav-item"><a href="pageGitLog.html" class="nav-link">Git Log</a></li>
+        </ul>
+    </div>
+  
+    <div class="container">
+        <table class="
+        table
+        table-xl
+        table-primary
+        table-striped
+        table-bordered
+        table-hover">
+            <thead>
+                <tr class="bg-dark text-light">
+                    <th class="bg-dark">#</th>
+                    <th scope="col">Commandes</th>
+                    <th scope="col">Actions</th>
+                    <th scope="col">Utilisations</th>
+                </tr>    
+            </thead>
+            <tbody>
+                <thead>
+                    <tr class="bg-secondary text-light text-center">
+                        <th colspan="4">INTERFACE GRAPHIQUE</th>
+                    </tr>    
+                </thead>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>gitk</td>
+                    <td>Ouvre une interface graphique du dépôt local</td>
+                    <td>gitk</td>
+                </tr>
+                <thead>
+                    <tr class="bg-secondary text-light text-center">
+                        <th colspan="4">CONFIGURATION / INITIALISATION</th>
+                    </tr>    
+                </thead>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git --version</td>
+                    <td>Affiche la version actuel</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git config</td>
+                    <td>configuration</td>
+                    <td>
+                        git config --global user.name "John Doe" <br> git config --global user.email sam@google.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git init</td>
+                    <td>Initialiser un nouveau projet</td>
+                    <td>git init (dans le dossier à initialiser)</td>
+                </tr>
+                <thead>
+                    <tr class="bg-secondary text-light text-center">
+                        <th colspan="4">ACTION EN DISTANT</th>
+                    </tr>    
+                </thead>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git clone</td>
+                    <td>La commande git clone est utilisée pour la vérification des dépôts. Si le dépôt se trouve sur un serveur distant, utilisez:
+                        <br><br>
+                        Inversement, si une copie de travail d’un dépôt local doit être créée, utilisez:
+                    </td>
+                    <td>git clone [url] <br>
+                        git clone [url] [nouveau_nom] <br>
+                        <br>
+                        git clone /chemin/vers/dépôt
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git fetch</td>
+                    <td>permet à un utilisateur d’extraire tous les fichiers du dépôt distant qui ne sont pas actuellement dans le répertoire de travail local : <br>
+                    mais ne modifie pas le depot local</td>
+                    <td>git fetch origin</td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git merge</td>
+                    <td>
+                        La commande git merge va quant à elle intégrer localement les modifications présentes sur le dépôt distant. : <br></td>
+                    <td>git merge origin</td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git pull</td>
+                    <td>git fatch >> git merge. fusionner toutes les modifications présentes sur le dépôt distant dans le répertoire de travail local :</td>
+                    <td>git pull</td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git push</td>
+                    <td>Cette commande prend en paramètres le nom du dépôt distant suivi du nom de la branche cible à mettre à jour. <br> Un simple push envoie les modifications locales apportées à la branche principale associée <br>
+                        La commande git push envoie les modifications locales vers le dépôt distant nommé origin et met à jour la branche exemple_pull_branch :</td>
+                    <td>git push origin master</td>
+                </tr>
+                
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git remote add</td>
+                    <td>synchroniser le projet versionné localement avec son dépôt distant: <br>
+                        Celle-ci attend en paramètre le nom du dépôt distant. Par convention, le dépôt par défaut est nommé origin.
+                        <br> Il faut également préciser l'URL d'accès à ce dépôt. </td>
+                    <td>git remote add origin git@github.com:JohnDoeDemo/repository-exemple.git</td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git remote -v</td>
+                    <td>répertorie les dépôts distants actuellement configurés:
+                    </td>
+                    <td>git remote -v</td> 
+                </tr>
+                <th scope="row">.</th>
+                    <td>git remote show</td>
+                    <td>répertorie les dépôts distants actuellement configurés:
+                    </td>
+                    <td>git remote show nom_du_depot</td>
+                <thead>
+                    <tr class="bg-secondary text-light text-center">
+                        <th colspan="4">ACTION EN LOCAL</th>
+                    </tr>    
+                </thead>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git branch</td>
+                    <td>supprimer / créer / afficher</td>
+                    <td>git branch –d nom-branche <br>
+                        git branch newBranch <br>
+                        git branch</td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git merge</td>
+                    <td>fusionner une branche dans la branche active :</td>
+                    <td>git merge (nom-branche)</td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git checkout</td>
+                    <td>Crééer / Basculer</td>
+                    <td>créer : <br>command git checkout -b (nom-branche) <br><br>
+                        Basculer : <br>git checkout (nom-branche)
+                    </td>
+                </tr>
+                <tr class="bg-secondary text-light text-center">
+                    <th colspan="4">AFFICHAGE / RECHERCHE</th>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git show</td>
+                    <td>afficher des informations sur tout fichier git :</td>
+                    <td>git show</td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git cat-file</td>
+                    <td>À l’aide de la valeur SHA-1, affichez le type d’un fichier :</td>
+                    <td>git cat-file –p d670460b4b4aece5915caf5c68d12f560a9fe3e4
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git grep</td>
+                    <td>rechercher dans les arbres de contenu des expressions et / ou des mots :</td>
+                    <td>git grep "www.hostinger.com"
+
+                    </td>
+                </tr>
+                <thead>
+                    <tr class="bg-secondary text-light text-center">
+                        <th colspan="4">ACTION D'ETATS</th>
+                        <tr class="bg-secondary text-light text-center">
+                            <th colspan="4">tracked [unmodified / modified / staged] - untracked</th>
+                        </tr>
+                    </tr>
+                </thead>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git status</td>
+                        <td>affiche la liste des fichiers modifiés ainsi que les fichiers qui doivent encore être ajoutés ou validés :</td>
+                        <td>git status</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git add</td>
+                        <td>ajouter des fichiers à l’index :</td>
+                        <td>git add temp.txt</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git restore</td>
+                        <td>Anuller une modif (avant commit) :</td>
+                        <td>git restore fichier.html</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git restore --staged</td>
+                        <td>retire un fichier indexé (avant commit) :</td>
+                        <td>git restore --staged fichier.html</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git commit</td>
+                        <td>valider les modifications apportées au HEAD :</td>
+                        <td>git commit –m “Description du commit”</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git stash</td>
+                        <td>aide à enregistrer les changements qui ne doivent pas être commit immédiatement. C’est un commit temporaire :</td>
+                        <td>git stash</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git reset</td>
+                        <td>réinitialiser l’index et le répertoire de travail à l’état du dernier commit :</td>
+                        <td>git reset --hard HEAD</td>
+                    </tr>
+                    <tr class="table-warning">
+                        <th scope="row">.</th>
+                        <td>git mv</td>
+                        <td>Déplace un dossier dans un dossier :</td>
+                        <td>git mv source destination</td>
+                    </tr>
+                    <tr class="table-warning">
+                        <th scope="row">.</th>
+                        <td>git rm</td>
+                        <td>supprimer des fichiers de l’index et du répertoire de travail :</td>
+                        <td>git rm nomfichier.txt</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git rm --cached</td>
+                        <td>supprimer de l'index et garde rdans le répertoire de travail :</td>
+                        <td>git rm --cached nomfichier.txt</td>
+                    </tr>
+                    <tr class="bg-secondary text-light text-center">
+                        <th colspan="4">LOG / SHA</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git log</td>
+                        <td>génère le log d’une branche :</td>
+                        <td>git log</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git ls-tree</td>
+                        <td>afficher un fichier arborescent avec le nom et le mode de chaque élément, et la valeur SHA-1 du blob :</td>
+                        <td>git ls-tree HEAD</td>
+                    </tr>
+                    <tr class="bg-secondary text-light text-center">
+                        <th colspan="4">OPTIMISER</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git gc</td>
+                        <td>Pour optimiser le dépôt en supprimant les fichiers inutiles et les optimiser :</td>
+                        <td>git gc</td>
+                    </tr>
+                    <tr class="bg-secondary text-light text-center">
+                        <th colspan="4">SECURITE</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git fsck</td>
+                        <td>Pour effectuer une vérification d’intégrité du système de fichiers git, <br>
+                            Tous les fichiers corrompus seront identifiés :</td>
+                        <td>git fsck</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">.</th>
+                        <td>git diff</td>
+                        <td>1- lister les conflits :
+                            2- afficher les conflits entre les branches à fusionner avant de les fusionner
+                            3- énumérer tous les conflits actuels :
+                        </td>
+                        <td>1- git diff --base nom-fichier <br>
+                            2- git diff branche-source branche-cible <br>
+                            3- git diff</td>
+                    </tr>
+                </tr>
+                <tr>
+                    <th scope="row">.</th>
+                    <td>git diff --color-words </td>
+                    <td>Le détail des éléments modifié se fera alors par mots, plutôt que par ligne.
+                    </td>
+                    <td>git diff --color-words</td>
+                </tr> 
+            </tbody>
+        </table>  
+    </div>
+    
+
+    <!-- SCRIPT Jquery -- Bootstrap 4.6-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
